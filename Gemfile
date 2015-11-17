@@ -32,6 +32,18 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# order the list per page
+gem 'will_paginate', '~> 3.0.7'
+
+# test using TDD with factory girl gem
+gem 'factory_girl_rails', '~> 4.0'
+
+# bourbon gem
+gem 'bourbon'
+
+# gridwork like Twitter Bootstrap
+gem 'neat'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
