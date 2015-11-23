@@ -22,6 +22,12 @@ class FrontpagesController < ApplicationController
 		@frontpage = Frontpage.find(params[:id])
 	end
 
+	def update
+		@frontpage = Frontpage.find(params[:id])
+		@frontpage.update_attributes(frontpage_params)
+		redirect_to frontpage_path
+	end
+
 	private
 
 	def frontpage_params
