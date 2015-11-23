@@ -14,6 +14,10 @@ class FrontpagesController < ApplicationController
 		redirect_to frontpages_path
 	end
 
+	def show
+		@frontpage = Frontpage.find(params[:id])
+	end
+
 	private
 
 	def frontpage_params
