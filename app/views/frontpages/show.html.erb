@@ -1,4 +1,7 @@
 <div class="reddit-box">
 	<h2><%= @frontpage.title %></h2>
 	<h4><%= @frontpage.description %></h4>
+	<div class="pull-right">
+		<%= link_to 'Edit', edit_frontpage_path(@frontpage), :class => 'btn btn-primary' %>
+	</div>
 </div>

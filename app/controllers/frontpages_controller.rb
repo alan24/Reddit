@@ -18,6 +18,10 @@ class FrontpagesController < ApplicationController
 		@frontpage = Frontpage.find(params[:id])
 	end
 
+	def edit
+		@frontpage = Frontpage.find(params[:id])
+	end
+
 	private
 
 	def frontpage_params

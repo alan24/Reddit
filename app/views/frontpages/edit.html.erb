@@ -1,0 +1,9 @@
+<div class="reddit-box">
+	<h3>Edit your submission</h3>
+	<%= simple_form_for @frontpage do |f| %>
+		<%= f.input :title %>
+		<%= f.input :description %>
+		<br />
+		<%= f.submit 'Update', :class => 'btn btn-primary' %>
+	<% end %>
+</div>
