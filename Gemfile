@@ -44,13 +44,19 @@ gem 'bourbon'
 # gridwork like Twitter Bootstrap
 gem 'neat'
 
-gem 'bootstrap-sass', '~> 3.3.5'
+# Twitter Bootstrap
+gem 'bootstrap-sass', '~> 3.3.5.1'
+
+gem 'sprockets', '2.11.0'
 
 # Create a form gem here
 gem 'simple_form'
 
 # Create a user authentication gem
 gem 'devise', '>= 3.2.4'
+
+# Sublime text plugin (good for indentation)
+gem 'htmlbeautifier'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
