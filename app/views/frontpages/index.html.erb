@@ -2,6 +2,10 @@
 	<div class="reddit-box">
 		<h4><%= frontpage.title %></h4>
 		<h4><%= frontpage.description %></h4>
+
+		<% if frontpage.user.present? %>
+			<small><%= frontpage.user.email %></small>
+		<% end %>
 	</div>
 
 <% end %>

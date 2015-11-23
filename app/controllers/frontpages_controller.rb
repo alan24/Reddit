@@ -10,7 +10,7 @@ class FrontpagesController < ApplicationController
 	end
 
 	def create
-		Frontpage.create(frontpage_params)
+		current_user.frontpages.create(frontpage_params)
 		redirect_to frontpages_path
 	end
 
