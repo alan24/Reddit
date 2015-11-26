@@ -5,6 +5,6 @@ class User < ActiveRecord::Base
     :recoverable, :rememberable, :trackable, :validatable
 
   has_many :frontpages
-
+  has_many :comments
   attr_accessor :login
 end
