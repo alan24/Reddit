@@ -1,5 +1,5 @@
 class FrontpagesController < ApplicationController
-  before_action :authenticate_user!, :only => [:new, :create]
+  before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
 
   def index
     @frontpages = Frontpage.all.paginate(:page => params[:page], :per_page => 25).order("created_at ASC")
@@ -20,16 +20,25 @@ class FrontpagesController < ApplicationController
 
   def edit
     @frontpage = Frontpage.find(params[:id])
+    if @frontpage.user != current_user
+    	render :text => 'Not allowed', :status => :unauthorized
+    end
   end
 
   def update
     @frontpage = Frontpage.find(params[:id])
+    if @frontpage.user != current_user
+    	render :text => 'Not allowed', :status => :unauthorized
+    end
     @frontpage.update_attributes(frontpage_params)
     redirect_to frontpage_path
   end
 
   def destroy
     @frontpage = Frontpage.find(params[:id])
+    if @frontpage.user != current_user
+    	render :text => 'Not allowed', :status => :unauthorized
+    end
     @frontpage.destroy
     redirect_to frontpage_path
   end
