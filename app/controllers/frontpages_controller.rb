@@ -20,6 +20,7 @@ class FrontpagesController < ApplicationController
 
   def show
     @frontpage = Frontpage.find(params[:id])
+    @comment = Comment.new
   end
 
   def edit
