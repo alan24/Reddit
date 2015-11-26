@@ -10,8 +10,12 @@ class FrontpagesController < ApplicationController
   end
 
   def create
-    current_user.frontpages.create(frontpage_params)
-    redirect_to frontpages_path
+    @frontpage = current_user.frontpages.create(frontpage_params)
+    if @frontpage.valid?
+    	redirect_to frontpages_path
+    else
+    	render :new, :status => :unprocessable_entity
+    end
   end
 
   def show
@@ -31,7 +35,11 @@ class FrontpagesController < ApplicationController
     	render :text => 'Not allowed', :status => :unauthorized
     end
     @frontpage.update_attributes(frontpage_params)
-    redirect_to frontpage_path
+    if @frontpage.valid?
+      redirect_to frontpages_path
+    else
+      render :edit, :status => :unprocessable_entity
+    end
   end
 
   def destroy
