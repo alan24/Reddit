@@ -28,6 +28,12 @@ class FrontpagesController < ApplicationController
     redirect_to frontpage_path
   end
 
+  def destroy
+    @frontpage = Frontpage.find(params[:id])
+    @frontpage.destroy
+    redirect_to frontpage_path
+  end
+
   private
 
   def frontpage_params
