@@ -1,6 +1,6 @@
 Reddit::Application.routes.draw do
   # devise gem created new routes
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callback_packs => 'users/omniauth_callbacks'}
   # You can have the root of your site routed with "root"
   root 'frontpages#index'
   # Created CRUD(Create, Read, Update, Destroy)

@@ -58,6 +58,12 @@ gem 'devise', '>= 3.2.4'
 # Sublime text plugin (good for indentation)
 gem 'htmlbeautifier'
 
+# helps to hide your API IDs
+gem 'figaro'
+
+# Facebook authentication gem
+gem 'omniauth-facebook'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
